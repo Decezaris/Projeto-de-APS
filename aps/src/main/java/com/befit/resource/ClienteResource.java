@@ -33,36 +33,7 @@ public class ClienteResource {
 	private ClienteService clienteService;
 	@Autowired
 	private ClienteRepository clienteRepository;
-	/*
-	@PostMapping("/avaliarTreino")
-	public void avaliarTreino(@RequestParam Map<String, String> parametros) {
-		
-		String grupamento = parametros.get("grupamento");
-		String nota = parametros.get("nota");
-		
-		int notaInt = Integer.parseInt(nota);
-		
-		clienteService.avaliarTreino(grupamento.charAt(0), notaInt);
-	}*/
-	
-	/*
-	@RequestMapping(method = RequestMethod.GET, value = "/login")
-	@ResponseBody
-	public String efetuarLogin(@RequestParam Map<String, String> parametros, Model model) {
-		model.addAttribute("cliente", new Cliente());
-        return "login";
-		Usuario u = new Cliente();
-		u.setLogin(parametros.get("login"));
-		u.setSenha(parametros.get("senha"));
-		model.addAttribute("name", u.getCpf());
-		if (clienteService.efetuarLogin(u)) {
-			model.addAttribute("appName", appName);
-			return "login";
-		} else {
-			return "";
-		}
-	}*/
-	
+
 	@GetMapping("/login")
     public String efetuarLogin(Model model) {
         model.addAttribute("cliente", new Cliente());
